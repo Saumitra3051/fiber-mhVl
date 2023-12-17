@@ -2,7 +2,13 @@ package main
 
 import (
 	"os"
+"encoding/json"
+	"net/http"
+	"sort"
+	"sync"
+	"time"
 
+	"github.com/gorilla/mux"
 	"github.com/gofiber/fiber/v2"
 )
 
@@ -16,17 +22,6 @@ func getPort() string {
 
 	return port
 }
-package main
-
-import (
-	"encoding/json"
-	"net/http"
-	"sort"
-	"sync"
-	"time"
-
-	"github.com/gorilla/mux"
-)
 
 type SortRequest struct {
 	ToSort [][]int `json:"to_sort"`
